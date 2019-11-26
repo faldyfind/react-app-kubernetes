@@ -22,3 +22,24 @@ deploy:
     - k8s/my-react-app-deployment.yaml
     - k8s/my-react-app-namespace.yaml
     - k8s/my-react-app-service.yaml
+profiles:
+- name: oncluster
+  build:
+    artifacts:
+    - image: asia.gcr.io/tk-dev-micro/my-react-app-pipeline
+      context: frontend
+      kaniko:
+        dockerfile: Dockerfile
+        buildContext:
+          localDir:
+            initImage: busybox
+        image: gcr.io/kaniko-project/executor:4ce8b8db817047f0be7a78c0fdffab71f797e8f8@sha256:fe1b5a428273309088fb6df563f4d88ab806fe602a7b0b3e8fbe1d7ee5f9ead0
+        cache: {}
+    tagPolicy:
+      gitCommit: {}
+    googleCloudBuild:
+      projectId: tk-dev-micro
+      dockerImage: gcr.io/cloud-builders/docker
+      kanikoImage: gcr.io/kaniko-project/executor
+      mavenImage: gcr.io/cloud-builders/mvn
+      gradleImage: gcr.io/cloud-builders/gradle
