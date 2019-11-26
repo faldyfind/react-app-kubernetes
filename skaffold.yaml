@@ -1,0 +1,24 @@
+apiVersion: skaffold/v1
+kind: Config
+metadata:
+  name: react-app-kubernetes
+build:
+  googleCloudBuild:
+    projectId: tk-dev-micro
+  artifacts:
+  - image: asia.gcr.io/tk-dev-micro/my-react-app
+    context: frontend
+    kaniko:
+      cache: {}
+
+#test:
+#  - image: asia.gcr.io/tk-dev-micro/my-react-app
+#    structureTests:
+#      - '/usr/share/nginx/html/*'
+
+deploy:
+  kubectl:
+    manifests:
+    - k8s/my-react-app-deployment.yaml
+    - k8s/my-react-app-namespace.yaml
+    - k8s/my-react-app-service.yaml
