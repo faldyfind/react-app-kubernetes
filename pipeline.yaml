@@ -37,6 +37,8 @@ spec:
     - oncluster
     - --file-output
     - build.out
+    - --namespace
+    - react-dev
     command:
     - skaffold
     - build
@@ -73,6 +75,8 @@ spec:
     - skaffold.yaml
     - --build-artifacts
     - build.out
+    - --namespace
+    - react-dev
     command:
     - skaffold
     - deploy
