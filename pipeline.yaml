@@ -44,7 +44,7 @@ spec:
     - build
     env:
     - name: GOOGLE_APPLICATION_CREDENTIALS
-      value: /secret/kaniko-secret
+      value: /secret/kaniko-secret.json
     image: gcr.io/k8s-skaffold/skaffold:v1.0.1
     name: run-build
     resources: {}
