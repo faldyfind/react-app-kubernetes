@@ -33,9 +33,9 @@ profiles:
             initImage: busybox
         image: gcr.io/kaniko-project/executor:4ce8b8db817047f0be7a78c0fdffab71f797e8f8@sha256:fe1b5a428273309088fb6df563f4d88ab806fe602a7b0b3e8fbe1d7ee5f9ead0
         cache: {}
-    tagPolicy:
-      envTemplate:
-        template: '{{.IMAGE_NAME}}:{{.VERSION}}'
+#    tagPolicy:
+#      envTemplate:
+#        template: '{{.IMAGE_NAME}}:{{.VERSION}}'
     googleCloudBuild:
       projectId: tk-dev-micro
       dockerImage: gcr.io/cloud-builders/docker
