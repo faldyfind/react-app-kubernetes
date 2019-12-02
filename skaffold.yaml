@@ -3,7 +3,8 @@ kind: Config
 metadata:
   name: react-app-kubernetes
 build:
-  pullSecretName: kaniko-secret
+  cluster:
+    pullSecretName: kaniko-secret
   tagPolicy:
     envTemplate:
       template: "{{.IMAGE_NAME}}:{{.VERSION}}"
