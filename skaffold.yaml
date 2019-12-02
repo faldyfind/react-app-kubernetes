@@ -26,7 +26,7 @@ profiles:
 - name: oncluster
   build:
     cluster:
-    pullSecretName: kaniko-secret
+      pullSecretName: kaniko-secret
     artifacts:
     - image: asia.gcr.io/tk-dev-micro/my-react-app
       context: frontend
