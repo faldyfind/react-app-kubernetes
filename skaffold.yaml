@@ -29,8 +29,8 @@ profiles:
       context: frontend
       kaniko:
         cache: {}
-        command:
-          - /kaniko/executor
+        args:
+          - --insecure-registry
     tagPolicy:
       envTemplate:
         template: '{{.IMAGE_NAME}}:{{.VERSION}}'
