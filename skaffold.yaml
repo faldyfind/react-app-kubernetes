@@ -28,6 +28,8 @@ profiles:
   build:
     cluster:
       pullSecretName: kaniko-secret
+    dockerConfig:
+      secretName: regcred
     artifacts:
     - image: asia.gcr.io/tk-dev-micro/my-react-app
       context: frontend
