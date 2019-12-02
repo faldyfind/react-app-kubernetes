@@ -3,9 +3,9 @@ kind: Config
 metadata:
   name: react-app-kubernetes
 build:
-  tagPolicy:
-    envTemplate:
-      template: "{{.IMAGE_NAME}}:{{.VERSION}}"
+#  tagPolicy:
+#    envTemplate:
+#      template: "{{.IMAGE_NAME}}:{{.VERSION}}"
   googleCloudBuild:
     projectId: tk-dev-micro
   artifacts:
@@ -29,9 +29,9 @@ profiles:
       context: frontend
       kaniko:
         cache: {}
-    tagPolicy:
-      envTemplate:
-        template: '{{.IMAGE_NAME}}:{{.VERSION}}'
+    #tagPolicy:
+    #  envTemplate:
+    #    template: '{{.IMAGE_NAME}}:{{.VERSION}}'
     googleCloudBuild:
       projectId: tk-dev-micro
       dockerImage: gcr.io/cloud-builders/docker
