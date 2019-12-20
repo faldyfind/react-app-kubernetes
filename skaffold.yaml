@@ -31,8 +31,6 @@ profiles:
     artifacts:
     - image: asia.gcr.io/tk-dev-micro/my-react-app
       context: frontend
-      kaniko:
-        cache: {}
     tagPolicy:
       envTemplate:
         template: '{{.IMAGE_NAME}}:{{.VERSION}}'
